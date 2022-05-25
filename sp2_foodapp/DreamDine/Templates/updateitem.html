@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+<style>
+body {
+	background-image:
+		url("");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+form {
+	max-width: 250px;
+	margin: 80px;
+	background: #1B4F72;
+	padding: 50px 100px;
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input[type=text], input[type=password],select {
+	width: 135%;
+	margin: 8px 0;
+	padding: 20px 20px;
+	display: inline-block;
+	border: 2px solid black;
+	box-sizing: border-box;
+	border-radius:5%;
+}
+
+button {
+	background-color: #F1C40F;
+	width: 100%;
+	color: white;
+	padding: 15px;
+	margin: 10px 0px;
+	border: none;
+	cursor: pointer;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 60px;
+	background: black;
+	padding: 0 50px;
+}
+
+.logo {
+	width: 30%;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 60px;
+	font-size: 35px;
+}
+
+nav {
+	width: 68%;
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 10px;
+	line-height: 60px;
+	text-transform: uppercase;
+}
+
+.banner {
+	height: 100%;
+}
+
+.banner img {
+	width: 95%;
+	height: 90vh;
+}
+
+.content {
+	padding: 5%;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.7;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+}
+
+footer {
+	background: #000;
+	color: #fff;
+	padding: 15px 50px;
+	text-align: center;
+}
+
+@media ( max-width : 600px) {
+	header {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.logo {
+		width: 100%;
+		float: none;
+	}
+	nav {
+		width: 100%;
+		float: none;
+	}
+	nav ul li {
+		display: block;
+	}
+	nav ul {
+		float: none;
+	}
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="logo">Dream Dine</div>
+		<nav>
+			<ul>
+				<li><a href="index.jsp">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<form method="post" name="f2" action="/updateitem/">
+		{% csrf_token %}
+		<table align="center">
+			<tr>
+				<td style="color: white">Item Name</td>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="Enter Item Name" name="name" value="{{ name }}"><br>
+				</td>
+			</tr>
+			<tr>
+				<td style="color: white">Category</td>
+			</tr>
+			<tr>
+				<td>
+					<select id="category" name="category" >
+				  <option>Select Category</option>
+				  <option value="North Indian Specials">North Indian Specials</option>
+				  <option value="South Indian Specials">South Indian Specials</option>
+				  <option value="Italian & Spanish Dishes">Italian & Spanish Dishes</option>
+				  <option value="Sweets & Bakings">Sweets & Bakings</option>
+					<option value="Deserts & Drinks">Deserts & Drinks</option>
+					<option value="Snacks & Starters">Snacks & Starters</option>
+					<option value="Seasonal Specials">Seasonal Specials</option>
+					<option value="Weekend Specials">Weekend Specials</option>
+    </select><br>
+				</td>
+			</tr>
+			<tr>
+				<td style="color: white">Item Price</td>
+			</tr>
+			<tr>
+				<td><input type="text" placeholder="Enter Item Price" name="price" value="{{ price }}"><br>
+				</td>
+			</tr>
+			<tr>
+				<td><button type="submit">Edit Item</button>
+					<br>
+
+		</table>
+	</form>
+</body>
+</html>

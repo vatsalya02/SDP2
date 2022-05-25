@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+input[type=number]{
+width: 20%;
+border-radius:5px;
+border-color: 5px black;
+height:25px;
+text-align:center;
+}
+html{
+background-color:#d8e0fd;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+img{
+border-radius:5px;
+}
+/* Style the counter cards */
+.card {
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin-top:5%;
+  margin-left:50px;
+  text-align: center;
+  font-family: arial;
+  background-color:white;
+  border-radius:5px;
+}
+.price {
+  color: black;
+  font-size: 20px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 80%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+ button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 10%;
+  font-size: 18px;
+}
+
+header {
+	height: 60px;
+	background: #262626;
+	padding: 0 20px;
+	line-height: 20px;
+	font-size: 15px;
+}
+
+.logo {
+	width: 30%;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 60px;
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+nav {
+	width: 68%;
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 10px;
+	line-height: 4
+	0px;
+	text-transform: uppercase;
+}
+.heading{
+text-align:center;
+color:maroon ;
+font-size:20px;
+}
+@media ( max-width : 600px) {
+	header {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.logo {
+		width: 100%;
+		float: none;
+	}
+	nav {
+		width: 100%;
+		float: none;
+	}
+	nav ul li {
+		display: block;
+	}
+	nav ul {
+		float: none;
+	}
+}
+
+</style>
+</head>
+<body>
+<header>
+		<div class="logo">MENU</div>
+		<nav>
+			<ul>
+				<li><a href="/index">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/get_cart_items">cart</a></li>
+				<li>
+                <a href="/menu">Go-Back</a>
+               </li>
+				<li>
+                <a href="/logout">Logout</a>
+               </li>
+			</ul>
+		</nav>
+</header>
+<br>
+<div class='heading'>
+<h1 >Weekend Specials</h1>
+</div>
+
+{% for items in wsitems %}
+    <div class="card">
+        <form method="POST" action="{% url 'cart_add' name=items.name  %}">
+            {% csrf_token %}
+  <img src="{{ items.image }}" alt="" style="width:100%">
+  <h1>{{ items.name }}</h1>
+  <p class="price">Rs. {{ items.price }}</p>
+  <p>How cool and delicious it was !!! That delicious food gaze will be loved by you.</p>
+    Qty&nbsp;:&nbsp;<input type="number" name="qty" value="0">
+    <p><button>Add to Cart</button></p>
+</div>
+  </div>
+</div>
+    </form>
+{% endfor %}
+</body>
+</html>
+

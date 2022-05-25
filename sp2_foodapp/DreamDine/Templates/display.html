@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+<style>
+table, th, td {
+  border: 5px outset black;
+  border-collapse: collapse;
+  color:black;
+  padding:10px;
+  background-image:url('https://media.istockphoto.com/vectors/vector-illustration-of-plain-beige-grungy-background-vector-id962839792?k=6&m=962839792&s=612x612&w=0&h=wijc8p9oPEQ2hlXVT4VTtot42uCu4L7A8aTvuE4dRf8=');
+
+}
+td{
+align="center";
+}
+body{
+background-image:url('https://media.istockphoto.com/vectors/abstract-geometric-network-technology-background-vector-id1214809938?k=6&m=1214809938&s=612x612&w=0&h=2QjBXypNuVQ8GTpriZGLvm-PFc1qCjxjCGg0_udw0oQ=');
+background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;
+	background-position: center;
+
+}
+.a{
+color:white;
+text-align:center;
+}
+</style>
+</head>
+
+<body>
+<br><br><br>
+<h1 class="a">USER DETAILS</h1>
+<br><br><br><br>
+<table align="center"  style="width:25%">
+    <tr>
+        <th>Sno</th>
+        <th>Name</th>
+        <th>Email Id</th>
+    </tr>
+    {% for stu in student %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ stu.username }}</td>
+        <td>{{ stu.email }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  max-width : 1100px;
+  padding: 50px 100px;
+	text-align: left;
+	margin-right: auto;
+	margin-left: auto;
+  background-image: linear-gradient(to right,#c9ffbf,
+#ffafbd);
+  border: 5px double #61045f;
+  border-radius: 50px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=password] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color:#004aa0;
+  color: white;
+  padding: 10px;
+  margin-left: 10px 0px;
+  border: none;
+  width: 100%;
+  border-radius: 1300px;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+  <script>
+    function validate(){
+    name=document.f2.firstname.value;
+    email=document.f2.email.value;
+    address=document.f2.address.value;
+    city=document.f2.city.value;
+    state=document.f2.state.value;
+    zip=document.f2.zip.value;
+    cardname=document.f2.cardname.value;
+    cardnumber=document.f2.cardnumber.value;
+    expyear=document.f2.expyear.value;
+    expmonth=document.f2.expmonth.value;
+    cvv=document.f2.cvv.value;
+if(name.length<8)
+{
+alert("Name should be of 8 characters")
+return false;
+}
+if(address.length<4)
+{
+alert("Address should be of 4 characters")
+return false;
+}
+if(city.length<4)
+{
+alert("City should be of 4 characters")
+return false;
+}
+if(state.length<2)
+{
+alert("State should be of 2 characters")
+return false;
+}
+if(zip.length<5)
+{
+alert("Zip should be of 5 digits")
+return false;
+}
+if(cardname.length<8)
+{
+alert("Card Name should be of 8 characters")
+return false;
+}
+if(cardnumber.length<16)
+{
+alert("Card Number should be of 16 digits")
+return false;
+}
+if(cvv.length<3)
+{
+alert("Cvv should be of 3 digits")
+return false;
+}
+if(expyear.length<4)
+{
+alert("Exp Year should be of 4 digits ")
+return false;
+}
+if(expmonth.length<2)
+{
+alert("Exp Month should be of 2 digits ")
+return false;
+}
+
+    }
+  </script>
+</head>
+<body>
+
+<h2 align="center">ONLINE PAYMENT FORM</h2>
+<div class="row">
+  <div class="col-50">
+    <div class="container">
+      <form name="f2" method="POST" action="/addpayment/">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user" style="color:orange;"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
+            <label for="email"><i class="fa fa-envelope" style="color:coral;"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@gmail.com" required>
+			<div class="row">
+              <div class="col-50">
+                <label for="adr"><i class="fa fa-address-card-o" style="color:navy;"></i> Address</label>
+            	<input type="text" id="adr" name="address" placeholder="Colony, 15th Street" required>
+              </div>
+              <div class="col-50">
+                <label for="city"><i class="fa fa-building" style="color:green;"></i> City</label>
+            	<input type="text" id="city" name="city" placeholder="New Delhi" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="state"><i class="fa fa-institution" style="color:maroon;"></i>State</label>
+                <input type="text" id="state" name="state" placeholder="Delhi" required>
+              </div>
+              <div class="col-50">
+                <label for="zip"><i class="fa fa-code" style="color:maroon;"></i>Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="110001" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-paypal" style="color:blue;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe" required>
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+            <div class="row">
+              <div class="col-25">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="YYYY" required>
+              </div>
+              <div class="col-25">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="MM" required>
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="password" id="cvv" name="cvv" placeholder="555" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn" align="centre"><b>Continue Transaction</b></button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

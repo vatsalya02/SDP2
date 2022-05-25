@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>CATERING</title>
+<style>
+html{
+background-image:url('https://media.istockphoto.com/photos/futuristic-digital-block-chain-background-picture-id1212911887?k=6&m=1212911887&s=612x612&w=0&h=VyaH0QDNSBCU4k4O5tz1ix5bL8ffX4lqcclHaL7ns-Q=');
+background-size:cover;
+background-repeat: no-repeat;
+}
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  height:80%;
+  margin-left:450px;
+  border-radius: 15px;
+  border: 5px outset black;
+  background-color:white;
+
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+.container {
+  padding: 2px 16px;
+
+
+}
+.button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position:relative;left:700px;
+  border-radius:10px;
+}
+.button1 {
+background-color: white
+}
+.a{
+color:white;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<h1 class="a">MENU DETAILS</h1>
+
+<div class="card" align="center">
+  <div class="container">
+    {% if cater %}
+      <table>
+        <td>
+        <h2>Delights&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.dcategory }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.dprice }} </h2>
+        <h2>Tropics&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.tcategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.tprice }}</h2>
+        <h2>Deserts&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.decategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.deprice }}</h2>
+        <h2>Drinks&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.drcategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.drprice }}</h2>
+        <h2>Main<br>course&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.maincategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.mprice }}</h2>
+          <h2>Dishes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.dicategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.diprice }}</h2>
+          <h2>Relishes&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.rcategory }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.rprice }}</h2>
+          <h2>Paan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;{{cater.pcategory}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ cater.pprice }}</h2>
+          </td>
+    </table>
+
+
+  </div>
+</div>
+<h1 class="a">Total&nbsp;:&nbsp;Rs.&nbsp;{{ total }}/-</h1>
+
+<button class="button button1" onclick="window.location.href='/pay_page';">ORDER</button>
+
+{% else %}
+<h1>{{ msg }}</h1>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import
+	url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	background: #d8e0fd;
+}
+
+.grid {
+	display: grid;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	grid-gap: 6rem;
+	grid-template-columns: repeat(4, 1fr);
+	align-items: start;
+}
+
+.grid-item {
+	background-color: #fff;
+	border-radius: 0.4rem;
+	overflow: hidden;
+	box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: 0.2s;
+	height:100%;
+}
+
+.grid-item:hover {
+	transform: translateY(-0.5%);
+	box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+	display: block;
+	width: 100%;
+	height: 25rem;
+	object-fit: cover;
+}
+
+.card-content {
+	padding: 3rem;
+}
+
+.card-header {
+	font-size: 3rem;
+	font-weight: 500;
+	color: #0d0d0d;
+	margin-bottom: 1.5rem;
+}
+
+.card-text {
+	font-size: 1.6rem;
+	letter-spacing: 0.1rem;
+	line-height: 1.7;
+	color: #3d3d3d;
+	margin-bottom: 2.5rem;
+}
+
+.card-btn {
+	display: block;
+	width: 100%;
+	padding: 1.5rem;
+	font-size: 2rem;
+	text-align: center;
+	color: #3363ff;
+	background-color: #d8e0fd;
+	border: none;
+	border-radius: 0.4rem;
+	transition: 0.2s;
+	cursor: pointer;
+	letter-spacing: 0.1rem;
+	height:40%;
+}
+
+.card-btn span {
+	margin-left: 1rem;
+	transition: 0.2s;
+}
+
+.card-btn:hover, .card-btn:active {
+	background-color: #c2cffc;
+}
+
+.card-btn:hover span, .card-btn:active span {
+	margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 60em) {
+	body {
+		padding: 3rem;
+	}
+	.grid {
+		grid-gap: 3rem;
+	}
+}
+
+header {
+	height: 60px;
+	background: #262626;
+	padding: 0 20px;
+	line-height: 20px;
+	font-size: 15px;
+}
+
+.logo {
+	width: 30%;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 60px;
+	font-size: 25px;
+	font-family: sans-serif;
+}
+
+nav {
+	width: 68%;
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 10px;
+	line-height: 60px;
+	text-transform: uppercase;
+}
+
+
+.banner {
+	height: 100%;
+}
+
+.banner img {
+	width: 100%;
+	height: 90vh;
+}
+
+.content {
+	padding: 5%;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.7;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+}
+
+footer {
+	background: #000;
+	color: #fff;
+	padding: 15px 50px;
+	text-align: center;
+}
+
+@media ( max-width : 600px) {
+	header {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.logo {
+		width: 100%;
+		float: none;
+	}
+	nav {
+		width: 100%;
+		float: none;
+	}
+	nav ul li {
+		display: block;
+	}
+	nav ul {
+		float: none;
+	}
+}
+.a{
+  margin-left: 1320px;
+  font-size:25px;
+}
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: white;
+  width: 100%;
+  border-radius:10px;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+</style>
+</head>
+<body>
+	<header>
+		<div class="logo">MENU</div>
+		<nav>
+			<ul>
+				<li><a href="/index">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/recomd">Advised</a></li>
+				<li><a href="/get_cart_items">cart</a></li>
+				<li>
+                <a href="/goback">Go-Back</a>
+               </li>
+				<li>
+                <a href="/logout">Logout</a>
+               </li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+<marquee direction="right">
+<h1 class="a">Hello {{ name }}</h1>
+	</marquee>
+	<br><br><br>
+	<div class="autocomplete" style="margin-left:500px;width:500px">
+	<form autocomplete="off" method ="POST" action="/search_add/">
+  		{% csrf_token %}
+    <input id="myInput" type="text" name="search" placeholder="Search....">
+  </div>
+		<input type = "submit" value="Search">
+</form>
+
+
+	<br><br><br>
+	<div class="grid">
+		<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/authentic-south-indian-cook-book-or-recipe-book-cover-designs-with-vector-id973719514?k=6&m=973719514&s=612x612&w=0&h=T8TEoZEVdytpFofJWOZDfuuQxk4VusrOGgLcKP9xK9U=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">South Indian Specials</h1><br>
+					<button class="card-btn" onclick="document.location='/si'" >View Menu <span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/northern-states-of-india-map-illustration-vector-id696182214?k=6&m=696182214&s=612x612&w=0&h=qwlqYvX91bj8cx9ObeoF5hRt5jBKf2_lXQ4JOYdh7q8=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">North Indian Specials</h1><br>
+
+					<button class="card-btn" onclick="document.location='/ni'" >View Menu<span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/italian-cuisine-top-view-frame-vector-id646480468?k=6&m=646480468&s=612x612&w=0&h=s3yRlLZGj6qAK2_rqmqr-cLQxeWQ3BGQcyPXujUkc9A=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Italian & Spanish Dishes</h1><br>
+					<button class="card-btn" onclick="document.location='/italian'" >View Menu<span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/candy-shop-cards-sweet-food-desserts-confectionary-symbols-for-menu-vector-id1165311249?k=6&m=1165311249&s=612x612&w=0&h=hTGbW4MMvkJ5QfZIi5nwzhUVnCUlZL0S3yL3qGPyJJ8=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Sweets <br>& Bakings</h1><br>
+
+					<button class="card-btn" onclick="document.location='/sb'" >View Menu<span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/drink-alcohol-icon-set-vector-id1152053739?k=6&m=1152053739&s=612x612&w=0&h=fe3vH5IGOTwM4KakYpPRK05USlI8kE1Iz2z9bEyFWos=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Desserts & Drinks</h1><br>
+
+					<button class="card-btn" onclick="document.location='/dd'" >View Menu <span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/snack-menu-vector-image-of-hand-drawn-appetizers-and-lettering-for-vector-id945094788?k=6&m=945094788&s=612x612&w=0&h=b7bynd7XOI6ECzelgVUvB8MCLLGt7od9vivxCAGaR8w=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Snacks & Starters</h1><br>
+				<button class="card-btn" onclick="document.location='/ss'" >View Menu<span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://media.istockphoto.com/vectors/tasty-desserts-in-cafe-vector-illustration-sweet-belgian-waffles-vector-id1203267246?k=6&m=1203267246&s=612x612&w=0&h=Wb-EgFhiIdVoSaaXkPcBJxnMBjfT2GZjrJfsKdpwonk=" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Seasonal Specials</h1><br>
+					<button class="card-btn" onclick="document.location='/sp'" >View Menu <span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+<div class="grid-item">
+			<div class="card">
+				<img class="card-img" src="https://thumbs.dreamstime.com/z/calendar-cartoon-mascot-shape-chef-holding-food-calendar-cartoon-mascot-shape-chef-holding-food-vcetor-164514217.jpg" alt="candidate" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">Weekend Specials</h1><br>
+
+					<button class="card-btn" onclick="document.location='/ws'" >View Menu<span>&raquo;</span></button>
+				</div>
+			</div>
+		</div>
+</div>
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["Chocolate Drizzle",
+
+"Rhubarb Pie",
+
+"Caramel IceCream",
+
+"Custard Pie",
+
+"Pie Pudding",
+
+"Cherry Sorbet",
+
+"Mango Lassi",
+
+"Malai Lassi",
+
+"Pistha Cocktail",
+
+"Strawberry Shake",
+
+"Badam Smoothie",
+
+"Arabic Halawet",
+
+"Choco Smoothie",
+
+"Banana Smoothie",
+
+"Berry Cupcakes",
+
+"Potato Chips",
+
+"Masala Vada",
+
+"Vegetarian Samosa",
+
+"Poha Snack",
+
+"Vegetable Pakora",
+
+"Vegetable cutlets",
+
+"Cheese Croquettes",
+
+"Onion Rings",
+
+"Chicken Nuggets",
+
+"Sated Mushrooms",
+
+"Roasted Kaju",
+
+"Ham Burger",
+
+"Grilled Sandwich",
+
+"Garlic Pizza",
+
+"French Fries",
+
+"Veg Manchuria",
+
+"Gulab Jamun",
+
+"Besan Burfi",
+
+"Carrot Halwa",
+
+"Mysore Pak",
+
+"Rava Laddu",
+
+"Jalebi Sweet",
+
+"Modak Prasad",
+
+"Kaju Katli",
+
+"Chocolate Cake",
+
+"Vanilla Muffins",
+
+"Ragi Cookies",
+
+"Peach Cobbler",
+
+"Red Velvet",
+
+"Macaroons",
+
+"Yeast Rolls",
+
+"Apple Crumble",
+
+"Chole Curry",
+
+"Palak Paneer",
+
+"Kaddu ki kheer",
+
+"Butter Chicken",
+
+"Dahi Bhalla",
+
+"Rajma Dal",
+
+"Peas Pulav",
+
+"Masala Paratha",
+
+"Khichdi",
+
+"Pulav",
+
+"EggCurry",
+
+"Thali",
+
+"Potato Curry",
+
+"Brinjal Curry",
+
+"Chicken Dum",
+
+"Tomato Curry",
+
+"Cheese Salad",
+
+"Arugula shrimp",
+
+"Spinach quinoa",
+
+"Spaghetti Pie",
+
+"Burger",
+
+"Toast",
+
+"Pasta",
+
+"Tortilla",
+
+"Makki Roti",
+
+"Veg Momos",
+
+"Masala Kulcha",
+
+"Chicken Thukpa",
+
+"Gur Raab",
+
+"Beetroot Thoran",
+
+"Fruit Salad",
+
+"Raw Mango",
+
+"Dal Makhani",
+
+"Jeera Rice",
+
+"Masala Puri",
+
+"Prawns fry",
+
+"Banana Thoran",
+
+"Butter Naan",
+
+"Carrot Soup",
+
+"Vanilla Smoothie"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+</script>
+</body>
+</html>

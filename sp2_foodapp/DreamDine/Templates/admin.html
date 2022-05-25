@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	background-image:
+		url("https://media.istockphoto.com/photos/admin-word-in-wooden-cube-picture-id1152216190?k=6&m=1152216190&s=612x612&w=0&h=rMpVE2hRUa2NP7RXlCRDE0hYME_JwXHOWOTKjnuu6WQ=");
+	min-height: 510px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: relative;
+}
+
+.sidenav {
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	z-index: 1;
+	top: 9%;
+	left: 5;
+	background: rgb(0, 0, 0); /* Fallback color */
+	background: rgba(0, 0, 0, 0.8);
+	background-size: 200%;
+	background-repeat: no-repeat;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #5D6D7E;
+}
+
+.main {
+	margin-left: 300px; /* Same as the width of the sidenav */
+	font-size: 25px; /* Increased text to enable scrolling */
+	padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+	}
+	.sidenav a {
+		font-size: 15px;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	height: 60px;
+	background: #262626;
+	padding: 0 50px;
+}
+
+.logo {
+	width: 30%;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 60px;
+	font-size: 35px;
+	font-family: sans-serif;
+}
+
+nav {
+	width: 68%;
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 10px;
+	line-height: 60px;
+	text-transform: uppercase;
+}
+
+.banner {
+	height: 110%;
+}
+
+.banner img {
+	width: 100%;
+	height: 90vh;
+}
+
+.content {
+	padding: 5%;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.7;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+}
+
+footer {
+	background: #000;
+	color: #fff;
+	padding: 15px 50px;
+	text-align: center;
+}
+
+@media ( max-width : 600px) {
+	header {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.logo {
+		width: 100%;
+		float: none;
+	}
+	nav {
+		width: 100%;
+		float: none;
+	}
+	nav ul li {
+		display: block;
+	}
+	nav ul {
+		float: none;
+	}
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="logo">Dream Dine</div>
+		<nav>
+			<ul>
+				<li><a href="/index">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	<br>
+	<h2 align="center">{{ msg }}</h2>
+	<div class="sidenav">
+		<br> <br> <a href="/userinfo">Check User Details</a> <br>
+		<br> <a href="/add">Add Items</a> <br> <br>
+		<a href="/update">Update Items</a> <br> <br>
+		<a href="/delete">Delete Items</a> <br> <br>
+        <a href="/productinfo">View Items</a> <br> <br>
+	</div>
+
+	<div class="main">
+
+	</div>
+
+</body>
+</html>

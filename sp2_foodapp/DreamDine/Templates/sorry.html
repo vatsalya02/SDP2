@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+    	*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Cambria', sans-serif;
+}
+.banner{
+    min-height: 100vh;
+    background: url("https://media.istockphoto.com/photos/abstract-bokeh-with-light-rays-picture-id640930850?k=6&m=640930850&s=612x612&w=0&h=Og7GM9LEL0CyrlfcYQ1f70x2bg8ipBRTctlY1VC2lu4=") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 400px 500px;
+    border: 4px double #780206;
+    border-radius: 4px;
+}
+.card-img{
+    background: url("https://i.pinimg.com/originals/2e/39/33/2e3933ddbe76acbba04408816176c945.png") center/cover no-repeat;
+}
+.banner h1{
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    color:black
+}
+.card-content{
+    background: #fff;
+    height: auto;
+}
+.card-content h2{
+    text-align: center;
+    color: #000;
+    padding: 25px 0 10px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+.form-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+	justify-content: center;
+}
+form select, form input,p{
+	color : black;
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    font-weight: 500;
+}
+form input[type = text], form input[type = number], form input::placeholder,select{
+    color: #000;
+}
+form input[type = submit]{
+    color: #fff;
+    background: #a73737;
+    padding: 12px 0;
+    border-radius: 40px;
+    cursor: pointer;
+    border : none
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+@media(max-width: 992px){
+    .card-container{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img{
+        height: 330px;
+    }
+}
+</style>
+<body>
+
+        <section class = "banner">
+
+            <div class = "card-container">
+                <div class = "card-img">
+                    <!-- image here -->
+                </div>
+                <div class = "card-content">
+                    <h2>ALL TABLES RESERVED !!!</h2>
+                    <form method="POST" action="/menu/">
+
+
+                        <div class = "form-row">
+                            <p align="center"><i class="fa fa-check" style="font-size:100px;color:green"></i></p>
+                        </div>
+                        <div class = "form-row">
+
+              				<p align="center">We apologise for the inconvenience... Better luck next time. We had another option for you... You can place order online. </p>
+                        </div>
+                        <div class = "form-row">
+                        <input type = "submit" value = "Order Now">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

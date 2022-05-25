@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Reservation Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <style>
+    	*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Cambria', sans-serif;
+}
+.banner{
+    min-height: 100vh;
+    background: url("https://media.istockphoto.com/photos/wood-table-top-on-light-blur-background-empty-brown-wood-table-picture-id1146986931?k=6&m=1146986931&s=612x612&w=0&h=tQk3RoUtHslZQlkeD_WYPaeK96tDm9fThDjcdPmvLJ8=") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding-bottom: 20px;
+}
+.card-container{
+    display: grid;
+    grid-template-columns: 450px 620px;
+    border: 5px double #606c88;
+    border-radius: 5px;
+}
+.card-img{
+    background: url("https://media.istockphoto.com/photos/served-table-with-food-and-burning-candles-in-restaurant-interior-picture-id1199689725?k=6&m=1199689725&s=612x612&w=0&h=F-cKDtmWk5Dy4C5vWizJf_ubpTcVD6j1rz1JkbCuMdE=") center/cover no-repeat;
+}
+.banner h1{
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    color:black
+}
+.card-content{
+    background: #fff;
+    height: auto;
+}
+.card-content h2{
+    text-align: center;
+    color: #000;
+    padding: 25px 0 10px 0;
+    font-size: 40px;
+    font-weight: 500;
+}
+.form-row{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+form select, form input{
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: 2px solid #ccc;
+    font-weight: 500;
+}
+form input[type = text], form input[type = number], form input::placeholder,select{
+    color: #000;
+}
+form input[type = submit]{
+    color: #fff;
+    background: #780206;
+    padding: 12px 0;
+    border-radius: 40px;
+    cursor: pointer;
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+@media(max-width: 992px){
+    .card-container{
+        grid-template-columns: 100%;
+        width: 100vw;
+    }
+    .card-img{
+        height: 330px;
+    }
+}
+.b{
+color:black;
+font-size:30px;
+}
+    </style>
+
+    <body>
+
+        <section class = "banner">
+            <h1>BOOK YOUR TABLE NOW</h1>
+            <h2 class="b">Available Table For Today &nbsp;: &nbsp;{{ tcount }}</h2>
+            <br><br>
+            <div class = "card-container">
+                <div class = "card-img">
+                    <!-- image here -->
+                </div>
+                <div class = "card-content">
+                    <h2>Reserve Your Table</h2>
+                    <form method="POST" action="/add_table/">
+                        {% csrf_token %}
+                        <div class = "form-row">
+                            <input type = "text" class="form-control" name="name" id="name" placeholder="Full Name" required>
+                            <input type = "email"class="form-control" name="email" id="email" placeholder="Email Address" required>
+                        </div>
+						<div class = "form-row">
+                            <input type = "text" class="form-control" name="phone" id="phone" placeholder="Phone Number"required>
+                            <input type = "number" class="form-control" name="guest" id="guest" placeholder="Adequacy of Guests" min = "1">
+                        </div>
+                        <div class = "form-row">
+                            <input type="date" class="form-control" name="date" id="date" placeholder="Date" required>
+                            <input type="time" class="form-control" name="time" id="time" placeholder="Time" required>
+                        </div>
+                        <div class = "form-row">
+                    		<select id="category" name="category" class="form-control">
+			<option>Reservation Type</option>
+			<option value="Birthday">Birthday</option>
+			<option value="Anniversary">Anniversary</option>
+			<option value="Private">Private</option>
+			<option value="Corporate">Corporate</option>
+            <option value="Holiday">Holiday</option>
+            <option value="Other">Other</option>
+    		</select>
+                        </div>
+                        <div class = "form-row">
+                    		<input type="text" class="form-control" name="message" placeholder="Any Special Requests">
+                        </div>
+                        <div class = "form-row">
+                            <input type = "submit" value = "BOOK NOW">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </body>
+</html>

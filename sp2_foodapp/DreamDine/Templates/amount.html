@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+<style>
+@import
+	url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+	background: #d8e0fd;
+}
+
+.grid {
+	display: grid;
+	width: 100em;
+	margin-left: auto;
+	margin-right: auto;
+	grid-gap: 6rem;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	align-items: start;
+}
+
+.grid-item {
+	background-color: #fff;
+	border-radius: 0.4rem;
+	overflow: hidden;
+	box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.grid-item:hover {
+	transform: translateY(-0.5%);
+	box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+	display: block;
+	width: 100%;
+	height: 30rem;
+	object-fit: cover;
+}
+
+.card-content {
+	padding: 3rem;
+}
+
+.card-header {
+	font-size: 3rem;
+	font-weight: 500;
+	color: #0d0d0d;
+	margin-bottom: 1.5rem;
+}
+
+.card-text {
+	font-size: 1.6rem;
+	letter-spacing: 0.1rem;
+	line-height: 1.7;
+	color: #3d3d3d;
+	margin-bottom: 2.5rem;
+}
+
+.card-btn {
+	display: block;
+	width: 100%;
+	padding: 1.5rem;
+	font-size: 2rem;
+	text-align: center;
+	color: #3363ff;
+	background-color: #d8e0fd;
+	border: none;
+	border-radius: 0.4rem;
+	transition: 0.2s;
+	cursor: pointer;
+	letter-spacing: 0.1rem;
+}
+
+.card-btn span {
+	margin-left: 1rem;
+	transition: 0.2s;
+}
+
+.card-btn:hover, .card-btn:active {
+	background-color: #c2cffc;
+}
+
+.card-btn:hover span, .card-btn:active span {
+	margin-left: 1.5rem;
+}
+
+@media only screen and (max-width: 60em) {
+	body {
+		padding: 3rem;
+	}
+	.grid {
+		grid-gap: 3rem;
+	}
+}
+
+header {
+	height: 60px;
+	background: #262626;
+	padding: 0 50px;
+}
+
+.logo {
+	width: 30%;
+	float: left;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	line-height: 60px;
+	font-size: 35px;
+	font-family: sans-serif;
+}
+
+nav {
+	width: 68%;
+	float: right;
+}
+
+nav ul {
+	list-style: none;
+	float: right;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 10px;
+	line-height: 60px;
+	text-transform: uppercase;
+}
+
+
+.banner {
+	height: 100%;
+}
+
+.banner img {
+	width: 100%;
+	height: 90vh;
+}
+
+.content {
+	padding: 5%;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.7;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+}
+
+footer {
+	background: #000;
+	color: #fff;
+	padding: 15px 50px;
+	text-align: center;
+}
+
+@media ( max-width : 600px) {
+	header {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		text-align: center;
+	}
+	.logo {
+		width: 100%;
+		float: none;
+	}
+	nav {
+		width: 100%;
+		float: none;
+	}
+	nav ul li {
+		display: block;
+	}
+	nav ul {
+		float: none;
+	}
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="logo">DREAM DINE</div>
+		<nav>
+			<ul>
+				<li><a href="/index">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li>
+                <a href="/logout">Logout</a>
+               </li>
+			</ul>
+		</nav>
+	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+<br>
+	<br>
+	<br>
+	<div class="grid">
+		<div class="grid-item">
+			<div class="card">
+				<img class="card-img"
+					src="https://media.istockphoto.com/vectors/payment-by-cash-vector-id537487845?k=6&m=537487845&s=612x612&w=0&h=-7PeC2G_XmhYM4067uHHfgM8FzL853zXBSS9B9HEukU=" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">CASH ON DELIVERY</h1>
+					<button class="card-btn" onclick="document.location='/end'" >
+						Pay Now<span>&rarr;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="grid-item">
+			<div class="card">
+				<img class="card-img"
+					src="https://media.istockphoto.com/vectors/bill-payment-flat-isometric-vector-concept-vector-id935291514?k=6&m=935291514&s=612x612&w=0&h=mI9MlEEDOrch3z58QI_sHLWCu4IuSWROH26g5LCj2pk=" />
+				<div class="card-content">
+					<h1 class="card-header" align="center">PRE PAYMENT</h1>
+					<button class="card-btn" onclick="document.location='/pay'">
+						Pay Now <span>&rarr;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

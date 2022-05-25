@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin:60px;
+  width:70%;
+  height:50%;
+}
+
+.about-section {
+
+  padding: 40px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+text-align: center;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+img {
+  border-radius: 50%;
+  width:20%;
+}
+</style>
+</head>
+<body>
+<br>
+
+<div class="about-section">
+<img alt="" src="https://media.istockphoto.com/photos/indian-dal-traditional-indian-soup-lentils-indian-dhal-spicy-curry-in-picture-id1130228942?k=6&m=1130228942&s=612x612&w=0&h=lBFZ_c_3jatl_JIw6Q9vsR9JhE_h92j-M-vnk_zL_P0=" align="right">
+  <h1>About Us</h1>
+  <p style = "font-family:georgia,garamond,serif;font-size:20px;font-style:italic;text-align:center">
+Our team assures you that your are going to taste the best. We know the food which your mouth watering for and your tummy deserves. We feel your cravings and we have a finger licking solution.
+We are passionate about food and we will make you to experience the new taste. Finally you will say yummy with your tummy.
+You’ll catch guests and neighbours hanging out in our restaurant, get great advice from our team members on what to eat and have with the neighbourhood and be refreshed by ordering the delicious food.
+</p>
+
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://media.istockphoto.com/vectors/woman-decorates-a-cake-vector-id1218736367?k=6&m=1218736367&s=612x612&w=0&h=yUJ2KG_oy32XwFTBuGP4cpcmwsyR-kJj2NCIVR1SwYU=" alt="" style="width:100%">
+      <div class="container">
+        <h2>Vatsalya</h2>
+        <p>vatsalya@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://media.istockphoto.com/vectors/cute-girl-whisk-heart-shape-cream-vector-id165724924?k=6&m=165724924&s=612x612&w=0&h=qU7YYuPzcye-zmYFIhqDkTf6kgB4Cxmpe4kL8n9I1vg=" alt="" style="width:100%">
+      <div class="container">
+        <h2>Jyothi</h2>
+        <p>jyothi@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://media.istockphoto.com/vectors/woman-cooking-salad-vector-id1219594366?k=6&m=1219594366&s=612x612&w=0&h=WAZGQxj-RKlqLz-ggv4H4-s7RDezmsUZyRTMSSQ3IX8=" alt="" style="width:100%">
+      <div class="container">
+        <h2>Sravya</h2>
+        <p>sravya@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
